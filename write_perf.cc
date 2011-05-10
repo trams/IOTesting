@@ -73,3 +73,30 @@ int EXAM_IMPL(write_perf::write_200_t)
 
   return write_file(filename, 200*1000);
 }
+
+int EXAM_IMPL(write_perf::crash_after_sync)
+{
+  int* bad_address = NULL;
+  const char* string = "Hello world!\n";
+
+  std::fstream file("some_file_after", std::ios_base::out);
+  file.write(string, 14);
+  file.flush();
+
+  *bad_address = 42;
+
+  return EXAM_RESULT;
+}
+
+int EXAM_IMPL(write_perf::crash_before_sync)
+{
+  int* bad_address = NULL;
+  const char* string = "Hello world!\n";
+
+  std::fstream file("some_file_before", std::ios_base::out);
+  file.write(string, 14);
+
+  *bad_address = 42;
+
+  return EXAM_RESULT;
+}

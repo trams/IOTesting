@@ -44,6 +44,9 @@ int main(int argc, const char** argv)
   t.add( &write_perf::write_100_t, p, "write a 400 megabyte file");
   t.add( &write_perf::write_200_t, p, "write a 800 megabyte file");
 
+  t.add( &write_perf::crash_after_sync, p, "crash after a sync");
+  t.add( &write_perf::crash_before_sync, p, "crash before a sync");
+
   if ( opts.is_set( 'l' ) ) {
     t.print_graph( std::cerr );
     return 0;

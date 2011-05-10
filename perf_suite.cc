@@ -1,3 +1,5 @@
+#include "write_perf.h"
+
 #include <exam/suite.h>
 #include <misc/opts.h>
 #include <iostream>
@@ -31,6 +33,10 @@ int main(int argc, const char** argv)
   exam::trivial_time_logger tlogger(std::cout);
   exam::test_suite t("write perfomance test suite", 20);
   t.set_logger(&tlogger);
+
+  write_perf p;
+
+  t.add( &write_perf::empty, p, "an empty test case");
 
   if ( opts.is_set( 'l' ) ) {
     t.print_graph( std::cerr );

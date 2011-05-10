@@ -8,4 +8,4 @@ EXAM_LIBS = -lexam -lxmt -lmisc
 all: exam_perf
 
 exam_perf:
-	g++ -O2 perf_suite.cc $(EXAM_INC_DIR) $(EXAM_LIB_DIR) $(EXAM_LIBS) -pthread -o perf -std=gnu++0x
+	g++ -O2 write_perf.cc perf_suite.cc $(EXAM_INC_DIR) $(EXAM_LIB_DIR) $(EXAM_LIBS) -pthread -o perf -std=gnu++0x

@@ -41,6 +41,8 @@ int main(int argc, const char** argv)
   t.add( &write_perf::write_10_t, p, "write a 40 megabyte file");
   t.add( &write_perf::write_20_t, p, "write a 80 megabyte file");
   t.add( &write_perf::write_50_t, p, "write a 200 megabyte file");
+  t.add( &write_perf::write_100_t, p, "write a 400 megabyte file");
+  t.add( &write_perf::write_200_t, p, "write a 800 megabyte file");
 
   if ( opts.is_set( 'l' ) ) {
     t.print_graph( std::cerr );

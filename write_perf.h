@@ -12,6 +12,8 @@ class write_perf
     int EXAM_DECL(write_10_t);
     int EXAM_DECL(write_20_t);
     int EXAM_DECL(write_50_t);
+    int EXAM_DECL(write_100_t);
+    int EXAM_DECL(write_200_t);
   private:
     int write_file(const std::string& filename, int block_count);
 

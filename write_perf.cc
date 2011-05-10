@@ -57,3 +57,19 @@ int EXAM_IMPL(write_perf::write_50_t)
 
   return write_file(filename, 50*1000);
 }
+
+int EXAM_IMPL(write_perf::write_100_t)
+{
+  std::string filename = xmt::uid_str();
+  files_to_delete_.push_back(filename);
+
+  return write_file(filename, 100*1000);
+}
+
+int EXAM_IMPL(write_perf::write_200_t)
+{
+  std::string filename = xmt::uid_str();
+  files_to_delete_.push_back(filename);
+
+  return write_file(filename, 200*1000);
+}

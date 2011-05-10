@@ -38,6 +38,10 @@ int main(int argc, const char** argv)
 
   t.add( &write_perf::empty, p, "an empty test case");
 
+  t.add( &write_perf::write_10_t, p, "write a 40 megabyte file");
+  t.add( &write_perf::write_20_t, p, "write a 80 megabyte file");
+  t.add( &write_perf::write_50_t, p, "write a 200 megabyte file");
+
   if ( opts.is_set( 'l' ) ) {
     t.print_graph( std::cerr );
     return 0;

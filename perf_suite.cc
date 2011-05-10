@@ -44,6 +44,12 @@ int main(int argc, const char** argv)
   t.add( &write_perf::write_100_t, p, "write a 400 megabyte file");
   t.add( &write_perf::write_200_t, p, "write a 800 megabyte file");
 
+  t.add( &write_perf::write_10_t_randomly, p, "write a 40 megabyte file randomly");
+  t.add( &write_perf::write_20_t_randomly, p, "write a 80 megabyte file randomly");
+  t.add( &write_perf::write_50_t_randomly, p, "write a 200 megabyte file randomly");
+  t.add( &write_perf::write_100_t_randomly, p, "write a 400 megabyte file randomly");
+  t.add( &write_perf::write_200_t_randomly, p, "write a 800 megabyte file randomly");
+
   t.add( &write_perf::crash_after_sync, p, "crash after a sync");
   t.add( &write_perf::crash_before_sync, p, "crash before a sync");
 

@@ -15,10 +15,17 @@ class write_perf
     int EXAM_DECL(write_100_t);
     int EXAM_DECL(write_200_t);
 
+    int EXAM_DECL(write_10_t_randomly);
+    int EXAM_DECL(write_20_t_randomly);
+    int EXAM_DECL(write_50_t_randomly);
+    int EXAM_DECL(write_100_t_randomly);
+    int EXAM_DECL(write_200_t_randomly);
+
     int EXAM_DECL(crash_after_sync);
     int EXAM_DECL(crash_before_sync);
   private:
     int write_file(const std::string& filename, int block_count);
+    int write_file_randomly(const std::string& filename, int block_count);
 
     std::vector<std::string> files_to_delete_;
 };
